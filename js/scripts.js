@@ -1,18 +1,13 @@
 function loadEmail(emailNum) {
 	$('#preview').load('emails.html #'+emailNum+',#buttons');
-	$('#preview').append('emails.html #buttons');
-	inbox.style.display = 'none';
-	back.style.display = 'inline';
+	$('#inbox').css('display', 'none');
+	$('#back').css('display', 'inline');
 }
 
 function loadInbox() {
-	var preview = document.getElementById('preview');
-	var inbox = document.getElementById('inbox');
-	var back = document.getElementById('back');
-	
-	preview.innerHTML = "";
-	inbox.style.display = 'block';
-	back.style.display = 'none';
+	$('#preview').html('');
+	$('#inbox').css('display', 'block');
+	$('#back').css('display', 'none');
 }
 
 function emailCheck(bool) {
