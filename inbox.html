@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>Phishing Training</title>
+		<!-- Jquery -->
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <!-- Optional theme -->
@@ -20,6 +22,10 @@
         <![endif]-->
         <!-- Custom styles for this template -->
         <link rel="stylesheet" type="text/css" href="css/inbox.css">
+		<!-- Email Imports -->
+		<link rel="import" href="emails.html">
+		<!-- Page Scripts -->
+		<script src="js/scripts.js"></script>
 
     </head>
     <body>
@@ -36,11 +42,14 @@
             <div class="blog-masthead">
                 <div class="container">
                     <nav class="blog-nav">
-                        <button type="button" class="btn btn-lg">
+                        <button type="button" class="btn btn-lg btn-header">
                         <span class="glyphicon glyphicon-th"></span>
                         </button>
                         <a class="blog-nav-item" href="#">Outlook.com</a>
                         <a class="blog-nav-item" href="#"> <span class="glyphicon glyphicon-plus-sign"></span> New</a>
+						<a id="back" class="blog-nav-item" href="javascript:loadInbox()" style="display:none">
+							<span class="glyphicon glyphicon-chevron-left"></span> Back
+						</a>
                     </nav>
                 </div>
             </div>
@@ -59,14 +68,16 @@
                         </ol>
 
                         </div><!-- /.blog-post -->
-
-                        <div class="col-sm-9">
+						<div id="preview" class="col-sm-9">
+						
+						</div>
+                        <div id="inbox" class="col-sm-9">
                             <h4>Inbox</h4>
                             <hr>
                             <ol class="list-unstyled">
 
                                 <li class="inboxitem">
-                                    <a href="#">
+                                    <a href="javascript:loadEmail('one')">
                                     <div class="col-sm-3"><span class="glyphicon glyphicon-unchecked"></span> University of Queensland</div>
                                     <div class="col-sm-6"><span class="notice">Important Changes to your account</span></div>
                                     <div class="col-sm-3"><span class="date">25/06/2015</span></div>
